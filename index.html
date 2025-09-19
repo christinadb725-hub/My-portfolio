@@ -1,60 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-        }
-        section {
-            margin: 30px 0;
-        }
-        h1, h2 {
-            color: #007acc;
-        }
-        a {
-            color: #007acc;
-            text-decoration: none;
-        }
-        .project {
-            margin-bottom: 15px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      color: #333;
+    }
+    header, footer {
+      background: #007acc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #007acc;
+    }
+    .center {
+      text-align: center;
+    }
+    img {
+      max-width: 200px;
+      border-radius: 50%;
+    }
+    .btn {
+      background: #007acc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      margin: 10px;
+      display: inline-block;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .social a {
+      margin: 0 10px;
+      color: #007acc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer p {
+      margin: 5px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Beginner Web Developer | Learning GitHub Pages</p>
-    </header>
 
-    <section>
-        <h2>About Me</h2>
-        <p>Hi! I'm learning web development and this is my first portfolio hosted on GitHub Pages. I'm excited to grow and build more projects!</p>
-    </section>
+  <!-- Hero Section -->
+  <header>
+    <h1>Hello! I'm [Your Name]</h1>
+    <p>Undergraduate IT Student at University of Colombo</p>
+    <a href="#contact" class="btn">Contact Me</a>
+    <div class="social">
+      <a href="https://facebook.com/yourprofile" target="_blank">Facebook</a> |
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+  </header>
 
-    <section>
-        <h2>Projects</h2>
-        <div class="project">
-            <strong>📁 Project 1:</strong> <a href="#">My First HTML Page</a>
-        </div>
-        <div class="project">
-            <strong>📁 Project 2:</strong> <a href="#">Calculator App</a>
-        </div>
-    </section>
+  <!-- About Me Section -->
+  <div class="section center" id="about">
+    <h2>About Me</h2>
+    <img src="your-image.jpg" alt="Your Photo">
+    <p>I am a passionate IT student learning web development and other modern tech skills. I love creating websites and exploring new technologies.</p>
+    <a href="your-cv.pdf" class="btn" download>Download CV</a>
+  </div>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-    </section>
+  <!-- Education -->
+  <div class="section">
+    <h2>Education</h2>
+    <ul>
+      <li>BSc in Information Technology - University of Colombo (Expected Graduation: [Year])</li>
+    </ul>
+  </div>
+
+  <!-- Skills -->
+  <div class="section">
+    <h2>My Skills</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>Git & GitHub</li>
+      <li>Python</li>
+      <!-- Add more skills -->
+    </ul>
+  </div>
+
+  <!-- Projects -->
+  <div class="section">
+    <h2>My Projects</h2>
+    <ul>
+      <li><a href="https://github.com/yourusername/project1" target="_blank">Project 1 - Simple Website</a></li>
+      <li><a href="https://github.com/yourusername/project2" target="_blank">Project 2 - Calculator App</a></li>
+      <!-- Add more projects -->
+    </ul>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="section" id="contact">
+    <h2>Contact Me / Get in Touch</h2>
+    <form class="contact-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+
+      <label for="email">Your Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Type your message here"></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Email: your.email@example.com</p>
+    <p>Phone: +94 712345678</p>
+    <p>Location: Colombo, Sri Lanka</p>
+  </footer>
+
 </body>
 </html>
