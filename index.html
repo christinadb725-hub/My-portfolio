@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Portfolio</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,18 +16,200 @@
       background: #f0f0f0;
       color: #333;
     }
-    header, footer {
+
+    header {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    header img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin-bottom: 30px;
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #d1d1d1; /* slightly lighter than white */
+    }
+
+    .btn {
       background: #007acc;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 10px 20px;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      margin: 15px 5px;
+      border-radius: 4px;
     }
+
+    .social {
+      margin-top: 20px;
+    }
+
+    .social a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 24px;
+      transition: transform 0.3s;
+    }
+
+    .social a:hover {
+      transform: scale(1.2);
+    }
+
     .section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 1000px;
       margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 8px;
     }
-    
+
+    .center {
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    a {
+      color: #007acc;
+    }
+
+    /* Small cropped profile picture in About Me */
+    .small-portrait {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 20px auto 30px auto; /* centered, with space above and below */
+      display: block;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <img src="mypic.jpg" alt="My Photo" />
+    <h1>Hello! I'm Christina</h1>
+    <p>Undergraduate IT Student at University of Colombo</p>
+    <a href="#contact" class="btn">Contact Me</a>
+
+    <div class="social">
+      <a href="https://facebook.com/yourprofile" target="_blank" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- About Me Section -->
+  <div class="section center" id="about">
+    <h2>About <span style="color:#007acc">Me</span></h2>
+
+    <!-- Small cropped profile image -->
+    <img src="mypic.jpg" alt="Profile small cropped" class="small-portrait" />
+
+    <p style="font-size: 16px; line-height: 1.6;">
+      Hello! I'm Thennila Mathimaaran, a passionate and self-motivated Information Technology graduate seeking a position where I can leverage my expertise in technology, software development, and problem-solving. I enjoy building user-friendly applications and continuously strive to improve my skills in modern programming languages and frameworks.
+    </p>
+
+    <!-- Download CV button below paragraph -->
+    <a href="your-cv.pdf" class="btn" download style="margin-top: 25px;">Download CV</a>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <h2>Education</h2>
+    <ul>
+      <li>BSc in Information Technology – University of Colombo (Expected Graduation: 202X)</li>
+    </ul>
+  </div>
+
+  <!-- Skills -->
+  <div class="section">
+    <h2>My Skills</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Git & GitHub</li>
+      <li>Responsive Web Design</li>
+    </ul>
+  </div>
+
+  <!-- Projects -->
+  <div class="section">
+    <h2>My Projects</h2>
+    <ul>
+      <li><a href="https://github.com/yourusername/project1" target="_blank">Project 1 - Simple Portfolio</a></li>
+      <li><a href="https://github.com/yourusername/project2" target="_blank">Project 2 - Calculator App</a></li>
+    </ul>
+  </div>
+
+  <!-- Contact -->
+  <div class="section" id="contact">
+    <h2>Contact Me / Get in Touch</h2>
+    <form class="contact-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+
+      <label for="email">Your Email Address:</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" rows="5" placeholder="Type your message here"></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Email: your.email@example.com</p>
+    <p>Phone: +94 712345678</p>
+    <p>Location: Colombo, Sri Lanka</p>
+  </footer>
 
 </body>
 </html>
