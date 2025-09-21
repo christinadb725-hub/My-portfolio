@@ -13,7 +13,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #1e2435; /* unified background */
+      background: #1e2435;
       color: #fff;
     }
 
@@ -73,7 +73,7 @@
       padding: 50px 20px;
       max-width: 1000px;
       margin: auto;
-      background: #2b3247; /* dark background for sections */
+      background: #2b3247;
       margin-top: 20px;
       border-radius: 8px;
     }
@@ -104,15 +104,6 @@
       margin-top: 40px;
     }
 
-    footer p {
-      margin: 5px;
-    }
-
-    a {
-      color: #00b4d8;
-    }
-
-    /* Small cropped profile picture in About Me */
     .small-portrait {
       width: 150px;
       height: 150px;
@@ -120,10 +111,10 @@
       border-radius: 12px;
       margin: 20px auto 30px auto;
       display: block;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
 
-    /* Education Section */
+    /* Education */
     .education-timeline {
       border-left: 4px solid #007acc;
       padding-left: 20px;
@@ -140,8 +131,7 @@
     }
 
     .education-item h3 {
-      margin-top: 0;
-      margin-bottom: 6px;
+      margin: 0 0 6px 0;
       font-weight: 700;
       font-size: 1.2rem;
     }
@@ -152,22 +142,15 @@
       margin-bottom: 4px;
     }
 
-    .education-item .details {
-      font-size: 0.85rem;
-      color: #b0b4c7;
-      margin-bottom: 6px;
-    }
-
     .education-item .years {
       font-size: 0.85rem;
       color: #9aa0b4;
       font-style: italic;
     }
 
-    /* Skills Section */
+    /* Skills */
     #skills {
-      background: #3a415a; /* lighter background */
-      color: #fff;
+      background: #3a415a;
       border-radius: 8px;
       margin-top: 20px;
       padding: 50px 20px;
@@ -210,15 +193,21 @@
       color: #dcdcdc;
     }
 
-    /* Projects Section */
+    /* Projects */
     #projects {
       background: #2b3247;
       color: #fff;
       border-radius: 8px;
       padding: 50px 20px;
       margin-top: 20px;
+      position: relative;
+    }
+
+    .projects-wrapper {
       overflow-x: auto;
-      white-space: nowrap; /* horizontal scroll for desktop */
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
     }
 
     .projects-container {
@@ -260,153 +249,144 @@
       color: #00b4d8;
     }
 
-    /* --- Mobile Responsiveness --- */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      font-size: 30px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+      display: none;
+    }
+
+    .arrow-left { left: -15px; }
+    .arrow-right { right: -15px; }
+
+    @media (min-width: 769px) {
+      .arrow { display: block; }
+    }
+
     @media (max-width: 768px) {
-      #projects {
-        overflow-x: visible;
-      }
-
-      .projects-container {
-        display: block; /* vertical stack */
-      }
-
-      .project-card {
-        width: 100%; /* full width */
-        margin-bottom: 20px;
-      }
+      .projects-wrapper { overflow-x: visible; }
+      .projects-container { display: block; }
+      .project-card { width: 100%; margin-bottom: 20px; }
+      .arrow { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <header>
     <img src="mypic.jpg" alt="My Photo" />
     <h1>Hello! I'm Christina</h1>
     <p>Undergraduate IT Student at University of Colombo</p>
     <a href="#contact" class="btn">Contact Me</a>
-
     <div class="social">
-      <a href="https://facebook.com/yourprofile" target="_blank" title="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </header>
 
-  <!-- About Me Section -->
+  <!-- About -->
   <div class="section center" id="about">
     <h2>About <span style="color:#007acc">Me</span></h2>
-    <img src="mypic.jpg" alt="Profile small cropped" class="small-portrait" />
-    <p style="font-size: 16px; line-height: 1.6;">
-      Hello! I'm Christina, a passionate and self-motivated Information Technology graduate seeking a position where I can leverage my expertise in technology, software development, and problem-solving. I enjoy building user-friendly applications and continuously strive to improve my skills in modern programming languages and frameworks.
-    </p>
-    <a href="your-cv.pdf" class="btn" download style="margin-top: 25px;">Download CV</a>
+    <img src="mypic.jpg" alt="Profile" class="small-portrait" />
+    <p>Hello! I'm Christina, a passionate IT undergraduate with interests in software development, design, and problem solving.</p>
   </div>
 
-  <!-- Education Section -->
+  <!-- Education -->
   <div class="section" id="education">
-    <h2>Education</h2>
+    <h2 class="center">Education</h2>
     <div class="education-timeline">
       <div class="education-item">
-        <h3>BSc Honours in Information Technology</h3>
-        <p class="school">University of Colombo</p>
-        <p class="years">2021–2024</p>
+        <h3>BSc in IT</h3>
+        <div class="school">University of Colombo</div>
+        <div class="years">2022 - Present</div>
       </div>
       <div class="education-item">
-        <h3>B.Tech</h3>
-        <p class="school">Jaffna blah blah blah</p>
-        <p class="details">G.C.E (A/L) Examination with C &amp; S &amp; S</p>
-        <p class="years">2000–2060</p>
+        <h3>High School</h3>
+        <div class="school">XYZ College</div>
+        <div class="years">2010 - 2021</div>
       </div>
     </div>
   </div>
 
-  <!-- Skills Section -->
+  <!-- Skills -->
   <div class="section" id="skills">
-    <h2 class="center">My <span style="color:#00b4d8;">Skills</span></h2>
+    <h2 class="center">Skills</h2>
     <div class="skills-category">
       <i class="fas fa-code skills-icon"></i>
-      <h3 class="skills-title">Development</h3>
+      <div class="skills-title">Programming</div>
       <ul class="skills-list">
-        <li>React</li>
-        <li>Laravel</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>PHP</li>
-        <li>MySQL</li>
+        <li>Java</li>
+        <li>Python</li>
+        <li>HTML, CSS, JS</li>
       </ul>
     </div>
     <div class="skills-category">
-      <i class="fas fa-chart-bar skills-icon"></i>
-      <h3 class="skills-title">Data Science</h3>
+      <i class="fas fa-paint-brush skills-icon"></i>
+      <div class="skills-title">Design</div>
       <ul class="skills-list">
-        <li>Python</li>
-        <li>R</li>
-        <li>Power BI</li>
-        <li>Pandas</li>
+        <li>UI/UX</li>
+        <li>Photoshop</li>
       </ul>
     </div>
   </div>
 
-  <!-- Projects Section -->
+  <!-- Projects -->
   <div class="section" id="projects">
-    <h2 class="center">My <span style="color:#00b4d8;">Projects</span></h2>
-    <div class="projects-container">
-      <a href="#" target="_blank" class="project-card">
-        <img src="images/project1.jpg" alt="Project 1" />
-        <h3>Second Hand Book Market Place</h3>
-      </a>
-      <a href="#" target="_blank" class="project-card">
-        <img src="images/project2.jpg" alt="Project 2" />
-        <h3>Vehicle Rental Mobile App UI</h3>
-      </a>
-      <a href="#" target="_blank" class="project-card">
-        <img src="images/project3.jpg" alt="Project 3" />
-        <h3>E-Commerce Website UI</h3>
-      </a>
-      <a href="#" target="_blank" class="project-card">
-        <img src="images/project4.jpg" alt="Project 4" />
-        <h3>Online Food Delivery System</h3>
-      </a>
-      <a href="#" target="_blank" class="project-card">
-        <img src="images/project5.jpg" alt="Project 5" />
-        <h3>Portfolio Website</h3>
-      </a>
-      <a href="#" target="_blank" class="project-card">
-        <img src="images/project6.jpg" alt="Project 6" />
-        <h3>Hospital Management System</h3>
-      </a>
-      <a href="#" target="_blank" class="project-card">
-        <img src="images/project7.jpg" alt="Project 7" />
-        <h3>Pet Care Mobile App</h3>
-      </a>
+    <h2 class="center">Projects</h2>
+    <button class="arrow arrow-left"><i class="fas fa-chevron-left"></i></button>
+    <div class="projects-wrapper" id="projectsWrapper">
+      <div class="projects-container">
+        <a href="#" class="project-card">
+          <img src="project1.jpg" alt="Project 1">
+          <h3>Project One</h3>
+        </a>
+        <a href="#" class="project-card">
+          <img src="project2.jpg" alt="Project 2">
+          <h3>Project Two</h3>
+        </a>
+        <a href="#" class="project-card">
+          <img src="project3.jpg" alt="Project 3">
+          <h3>Project Three</h3>
+        </a>
+      </div>
     </div>
+    <button class="arrow arrow-right"><i class="fas fa-chevron-right"></i></button>
   </div>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <div class="section" id="contact">
-    <h2>Contact Me</h2>
+    <h2 class="center">Contact Me</h2>
     <form class="contact-form">
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" placeholder="Enter your name" />
-      <label for="email">Your Email Address:</label>
-      <input type="email" id="email" placeholder="Enter your email" />
-      <label for="message">Your Message:</label>
-      <textarea id="message" rows="5" placeholder="Type your message here"></textarea>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
       <button type="submit" class="btn">Send Message</button>
     </form>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>Email: your.email@example.com</p>
-    <p>Phone: +94 712345678</p>
-    <p>Location: Colombo, Sri Lanka</p>
+    <p>© 2025 Christina. All rights reserved.</p>
   </footer>
 
+  <!-- JS for arrows -->
+  <script>
+    const wrapper = document.getElementById('projectsWrapper');
+    document.querySelector('.arrow-left').addEventListener('click', () => {
+      wrapper.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+    document.querySelector('.arrow-right').addEventListener('click', () => {
+      wrapper.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
